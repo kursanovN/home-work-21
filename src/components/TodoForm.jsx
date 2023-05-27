@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getTodo, postTodo } from "../store/todo/todoThunk";
+import { TodoList } from "./TodoList";
 import styled from "styled-components";
 
 export const TodoForm = () => {
@@ -31,27 +32,40 @@ export const TodoForm = () => {
           value={value}
           onChange={(e) => setValue(e.target.value)}
         />
+        <button type="submit">ADD</button>
         <div>
           <select value={selectValue} onChange={selectChangeHandler}>
             <option value="All">All</option>
             <option value="True">True</option>
             <option value="False">False</option>
           </select>
-          <button type="submit">ADD</button>
         </div>
       </form>
+      <TodoList />
     </Container>
   );
 };
 const Container = styled.div`
+  padding: 30px;
+  background-color: #11100e8f;
+  margin-top: 30px;
+  border-radius: 12px;
+  backdrop-filter: blur(5px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
   form {
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
     input {
       width: 400px;
       height: 40px;
-      border: 0;
-      border-radius: 22px;
-      text-align: center;
+      border-radius: 6px;
+      padding-left: 20px;
     }
     div {
       display: flex;
@@ -59,27 +73,30 @@ const Container = styled.div`
       align-items: center;
       gap: 20px;
       margin-top: 20px;
-      button {
-        width: 100px;
-        height: 30px;
-        border-radius: 12px;
-        font-size: 17px;
-        border: 0;
-        transition: 0.1s;
-        &:hover {
-          font-size: 20px;
-          font-weight: 800;
-        }
-        &:active {
-          background-color: #7c7676;
-        }
-      }
-      select {
-        width: 100px;
-        height: 30px;
-        font-size: 17px;
-        border-radius: 12px;
-        text-align: center;
+    }
+    select {
+      width: 100px;
+      height: 30px;
+      font-size: 17px;
+      border-radius: 12px;
+      text-align: center;
+      margin-bottom: 17px;
+    }
+    button {
+      width: 120px;
+      height: 40px;
+      border-radius: 12px;
+      font-size: 17px;
+      transition: 0.1s;
+      background: rgba(0, 0, 0, 0.2);
+      color: #fff;
+      border: 2px dashed #fff;
+
+      &:hover {
+        font-size: 20px;
+        font-weight: 800;
+        color: #fff;
+        border: 2px solid #fff;
       }
     }
   }

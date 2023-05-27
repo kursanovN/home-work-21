@@ -1,6 +1,6 @@
 import { ActionTypeTodo } from "./todoReduser";
 
-const BASE_URL = "https://todoredux-1636c-default-rtdb.firebaseio.com/todos";
+const BASE_URL = "https://todofirebase-3f0d9-default-rtdb.firebaseio.com/todo";
 
 export const getTodo = () => {
   return async (dispatch) => {

@@ -35,25 +35,32 @@ export const TodoItem = ({
           <h1
             style={
               el.completed
-                ? { textDecoration: "line-through", color: "#00000053" }
+                ? { textDecoration: "line-through", color: "##000" }
                 : null
-            }
-          >
+            }>
             {el.title}
           </h1>
-          <button onClick={() => editHandler(el)}>EDIT</button>
         </>
       )}
-      <button onClick={() => deleteHandler(el.id)}>DELETE</button>
-      <Checkbox type="checkbox" onClick={() => completedHandler(el)} />
+      <div>
+        {" "}
+        <button onClick={() => editHandler(el)}>EDIT</button>
+        <button onClick={() => deleteHandler(el.id)}>DELETE</button>
+        <Checkbox type="checkbox" onClick={() => completedHandler(el)} />
+      </div>
     </Container>
   );
 };
 const Container = styled.div`
+  width: 45vw;
+  display: flex;
+  justify-content: space-between;
   margin: 10px;
-  background-color: #fff;
-  border-radius: 12px;
-  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  border: 2px solid #fff;
+  padding: 10px 15px 10px 15px;
+  color: #fff;
   button {
     width: 100px;
     height: 35px;
@@ -64,8 +71,8 @@ const Container = styled.div`
     font-size: 17px;
     margin: 10px;
   }
-`
+`;
 const Checkbox = styled.input`
   width: 20px;
   height: 20px;
-`
+`;

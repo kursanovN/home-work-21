@@ -45,5 +45,7 @@ export const TodoList = () => {
   );
 };
 const Container = styled.div`
-  text-align: center;
-`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+`;
